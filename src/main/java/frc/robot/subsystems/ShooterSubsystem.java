@@ -7,18 +7,34 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
-public class ExampleSubsystem extends SubsystemBase {
+public class ShooterSubsystem extends SubsystemBase {
+
+  private final Talon shooterMotor = new Talon(Constants.kShooterMotorId);
+
   /**
-   * Creates a new ExampleSubsystem.
+   * Creates a new ShooterSubsystem.
    */
-  public ExampleSubsystem() {
-
+  public ShooterSubsystem() {
   }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+  }
+
+  public void fire() {
+    shooterMotor.set(.5);
+  }
+
+  public void holdFire() {
+    shooterMotor.set(0);
+  }
+
+  public void close() {
+    shooterMotor.close();
   }
 }

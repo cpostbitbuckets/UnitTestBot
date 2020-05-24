@@ -12,5 +12,9 @@
     "**/.settings": true,
     "**/.factorypath": true,
     "**/*~": true
+  },
+
+  "java.test.config": {
+    "env": { "DYLD_LIBRARY_PATH": "build/tmp/jniExtractDir" }
   }
 }
